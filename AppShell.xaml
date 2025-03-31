@@ -10,17 +10,22 @@
 
 
     <ShellContent
-
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-    <FlyoutItem Title="Terms">
-        <ShellContent ContentTemplate="{DataTemplate local2:Terms}" />
-    </FlyoutItem>
+    <ShellContent
+        Title="Terms"
+        ContentTemplate="{DataTemplate local2:Terms}"
+        Route="Terms" />
 
-    <FlyoutItem Title="Reports">
-        <ShellContent ContentTemplate="{DataTemplate local2:Reports}" />
-    </FlyoutItem>
+    <ShellContent
+        Title="Reports"
+        ContentTemplate="{DataTemplate local2:Reports}"
+        Route="Reports" />
 
-</Shell>S
+
+
+
+
+</Shell>
