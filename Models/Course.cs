@@ -1,8 +1,6 @@
-﻿
-
-namespace Academic_Tracker_Mobile_Development.Models
+﻿namespace Academic_Tracker_Mobile_Development.Models
 {
-    internal class Course
+    public class Course: AcademicModel
     {
     }
 }
