@@ -3,10 +3,10 @@
     x:Class="Academic_Tracker_Mobile_Development.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:DataType="vm:MainPageViewModel"
-    xmlns:vm="clr-namespace:Academic_Tracker_Mobile_Development.ViewModels">
+    xmlns:vm="clr-namespace:Academic_Tracker_Mobile_Development.ViewModels"
+    x:DataType="vm:MainPageViewModel">
     <ContentPage.BindingContext>
-        <vm:MainPageViewModel/>
+        <vm:MainPageViewModel />
     </ContentPage.BindingContext>
 
     <StackLayout>
@@ -104,14 +104,14 @@
 
 
             <Button
-                Command="{Binding NavigateTermsCommand}"
                 Grid.Column="0"
                 Margin="10"
+                Command="{Binding NavigateTermsCommand}"
                 Text="Terms" />
             <Button
-                Command="{Binding NavigateReportsCommand}"
                 Grid.Column="1"
                 Margin="10"
+                Command="{Binding NavigateReportsCommand}"
                 Text="Reports" />
 
         </Grid>

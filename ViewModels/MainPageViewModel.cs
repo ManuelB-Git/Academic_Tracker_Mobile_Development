@@ -15,7 +15,7 @@ namespace Academic_Tracker_Mobile_Development.ViewModels
         [RelayCommand]
         private static async Task NavigateReports()
         {
-            await Shell.Current.GoToAsync("///Reports");
+            await Shell.Current.Navigation.PushAsync(new Reports());
         }
 
     }

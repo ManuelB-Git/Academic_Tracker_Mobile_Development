@@ -24,7 +24,11 @@
         ContentTemplate="{DataTemplate local2:Reports}"
         Route="Reports" />
 
-
+    <ShellContent
+        Title=""
+        ContentTemplate="{DataTemplate local2:AddEditTermPage}"
+        Route="AddEditTermPage"
+        Shell.FlyoutBehavior="Disabled" />
 
 
 
