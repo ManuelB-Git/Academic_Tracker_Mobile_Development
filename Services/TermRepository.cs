@@ -34,7 +34,8 @@ namespace Academic_Tracker_Mobile_Development.Services
             ArgumentNullException.ThrowIfNull(term);
 
             int result = 0;
-            await _connection.RunInTransactionAsync(tran => {
+            await _connection.RunInTransactionAsync(tran => 
+            {
                 var courses = tran.Table<Course>().Where(c => c.TermId == term.Id).ToList();
 
                 foreach (var course in courses)
