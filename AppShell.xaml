@@ -4,8 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Academic_Tracker_Mobile_Development"
-    Shell.FlyoutBehavior="Flyout"
-    Title="Academic_Tracker_Mobile_Development">
+    Title="Academic_Tracker_Mobile_Development"
+    Shell.FlyoutBehavior="Flyout">
 
     <ShellContent
         Title="Home"
