@@ -3,37 +3,85 @@
     x:Class="Academic_Tracker_Mobile_Development.Views.Terms"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Academic_Tracker_Mobile_Development.Models"
     xmlns:vm="clr-namespace:Academic_Tracker_Mobile_Development.ViewModels"
-    xmlns:models ="clr-namespace:Academic_Tracker_Mobile_Development.Models"
-    x:DataType="vm:TermsViewModel"
-    Title="Terms">
+    Title="Terms"
+    x:DataType="vm:TermsViewModel">
 
     <ContentPage.BindingContext>
         <vm:TermsViewModel />
     </ContentPage.BindingContext>
-    
+
     <VerticalStackLayout>
         <Button
-            Command="{Binding NavigateEditAddTermCommand}"
             Margin="10,10,20,10"
+            Command="{Binding NavigateEditAddTermCommand}"
             HorizontalOptions="End"
             Text="Add Term" />
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
+        <Border
+            Margin="10"
+            Padding="10"
+            BackgroundColor="#89cff0"
+            WidthRequest="300">
+            <Label
+                Margin="10"
+                HorizontalOptions="Center"
+                Text="Welcome to your terms, swipe right to delete and left to edit."
+                VerticalOptions="Center" />
+        </Border>
+
 
 
         <CollectionView Margin="10" ItemsSource="{Binding Terms}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Term">
-                    <VerticalStackLayout Padding="10">
-                        <Label Text="{Binding Title}"/>
-                        <Label Text="{Binding StartDate}"/>
-                    </VerticalStackLayout>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="Red"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TermsViewModel}}, Path=DeleteTermCommand}"
+                                    CommandParameter="{Binding .}"
+                                    Text="Delete" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+
+                                <SwipeItem
+                                    
+                                    BackgroundColor="Orange"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TermsViewModel}}, Path=EditTermCommand}"
+                                    CommandParameter="{Binding .}"
+                                    Text="Edit" />
+
+
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+
+                        <Border Margin="10" Stroke="Transparent">
+                            <StackLayout>
+                                <Label
+                                    FontSize="20"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Title}"
+                                    VerticalOptions="Center" />
+
+                                <Label
+                                    FontSize="12"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding DisplayDates}"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </Border>
+
+
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        
+
+
     </VerticalStackLayout>
 </ContentPage>

@@ -35,9 +35,7 @@ namespace Academic_Tracker_Mobile_Development.Models
             return true;
         }
 
-        public virtual string DisplayNameAndDate()
-        {
-            return $"{Title} ({StartDate:MMM yyyy} - {EndDate:MMM yyyy})";
-        }
+        public string DisplayDates => $"{StartDate:MMM yyyy} - {EndDate:MMM yyyy}";
+
     }
 }

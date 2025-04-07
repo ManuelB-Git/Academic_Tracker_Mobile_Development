@@ -1,9 +1,12 @@
+using Academic_Tracker_Mobile_Development.Models;
+
 namespace Academic_Tracker_Mobile_Development.Views;
 
 public partial class AddEditTermPage : ContentPage
 {
-	public AddEditTermPage()
+	public AddEditTermPage(Term term)
 	{
 		InitializeComponent();
-	}
+        BindingContext = new ViewModels.AddEditTermViewModel(term);
+    }
 }

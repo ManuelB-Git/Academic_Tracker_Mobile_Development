@@ -5,19 +5,20 @@ namespace Academic_Tracker_Mobile_Development.Services
 {
     public class LocalDbService
     {
-        private readonly SQLiteAsyncConnection _connection;
+        private static SQLiteAsyncConnection? _database;
 
-        public LocalDbService(string db_path)
+        public static async Task InitAsync(string dbPath)
         {
-            _connection = new SQLiteAsyncConnection(db_path);
-            _connection.CreateTableAsync<Term>();
-            _connection.CreateTableAsync<Course>();
-            _connection.CreateTableAsync<Assessment>();
+            if (_database != null)
+                return;
+
+            _database = new SQLiteAsyncConnection(dbPath);
+            await _database.CreateTableAsync<Term>();
+            await _database.CreateTableAsync<Course>();
+            await _database.CreateTableAsync<Assessment>();
         }
 
-        public SQLiteAsyncConnection GetConnection()
-        {
-            return _connection;
-        }
+        public static SQLiteAsyncConnection Database => _database ?? throw new InvalidOperationException("Database not initialized. Call InitAsync first.");
+
     }
 }

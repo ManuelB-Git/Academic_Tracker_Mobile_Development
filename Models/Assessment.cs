@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Academic_Tracker_Mobile_Development.Models
 {
-    public class Assessment : AcademicModel
+    public partial class Assessment : AcademicModel
     {
         [Required(ErrorMessage = "Assessment type is required")]
         public string Type { get; set; } = string.Empty;

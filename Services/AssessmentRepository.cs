@@ -10,7 +10,9 @@ namespace Academic_Tracker_Mobile_Development.Services
 
         public AssessmentRepository()
         {
-            _connection = App.LocalDbService.GetConnection();
+            _connection = LocalDbService.Database;
+
+
         }
 
 

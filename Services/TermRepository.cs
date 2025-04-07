@@ -3,14 +3,14 @@ using SQLite;
 
 namespace Academic_Tracker_Mobile_Development.Services
 {
+   
     public class TermRepository
     {
         private readonly SQLiteAsyncConnection _connection;
         public TermRepository()
         {
-            _connection = App.LocalDbService.GetConnection();
+            _connection = LocalDbService.Database;
         }
-
 
         public async Task<List<Term>> GetAllTerms() => await _connection.Table<Term>().ToListAsync();
 

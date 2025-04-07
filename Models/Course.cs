@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Academic_Tracker_Mobile_Development.Models
 {
-    public class Course: AcademicModel
+    public partial class  Course: AcademicModel
     {
         [Required(ErrorMessage ="Status is required")]
         public string Status { get; set; } = string.Empty;

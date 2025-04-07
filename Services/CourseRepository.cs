@@ -8,7 +8,8 @@ namespace Academic_Tracker_Mobile_Development.Services
         private readonly SQLiteAsyncConnection _connection;
         public CourseRepository()
         {
-            _connection = App.LocalDbService.GetConnection();
+            _connection = LocalDbService.Database;
+
         }
 
 

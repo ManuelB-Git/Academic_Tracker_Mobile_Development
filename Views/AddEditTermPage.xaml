@@ -3,11 +3,80 @@
     x:Class="Academic_Tracker_Mobile_Development.Views.AddEditTermPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="AddEditTermPage">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    xmlns:viewmodel="clr-namespace:Academic_Tracker_Mobile_Development.ViewModels"
+    Title="Add/Edit Term"
+    x:DataType="viewmodel:AddEditTermViewModel">
+    <Border
+        Background="#d0effb"
+        MaximumHeightRequest="650"
+        MaximumWidthRequest="350"
+        StrokeShape="RoundRectangle 20,20,20,20">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Margin="20,20,0,20"
+                Text="Title" />
+            <Entry
+                x:Name="TermTitle"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Margin="20,0,20,0"
+                Placeholder="Enter a title..."
+                Text="{Binding termName}" />
+            <Label
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="20"
+                Text="Start Date" />
+            <DatePicker
+                x:Name="TermStartDate"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Margin="20"
+                Date="{Binding startDate}" />
+            <Label
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                Margin="20"
+                Text="Start Date" />
+            <DatePicker
+                x:Name="TermEndDate"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Margin="20"
+                Date="{Binding endDate}" />
+
+            <Button
+                Grid.Row="6"
+                Grid.Column="0"
+                Margin="10"
+                Command="{Binding SaveTermCommand}"
+                Text="Save" />
+            <Button
+                Grid.Row="6"
+                Grid.Column="1"
+                Margin="10"
+                BackgroundColor="Red"
+                Command="{Binding CancelCommand}"
+                Text="Cancel" />
+
+
+        </Grid>
+    </Border>
 </ContentPage>
