@@ -39,8 +39,9 @@
                         <SwipeView.RightItems>
                             <SwipeItems>
                                 <SwipeItem
+                                    x:DataType="{x:Type vm:TermsViewModel}"
                                     BackgroundColor="Red"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TermsViewModel}}, Path=DeleteTermCommand}"
+                                    Command="{Binding Path=DeleteTermCommand, Source={RelativeSource AncestorType={x:Type vm:TermsViewModel}}}"
                                     CommandParameter="{Binding .}"
                                     Text="Delete" />
                             </SwipeItems>
@@ -50,9 +51,9 @@
                             <SwipeItems>
 
                                 <SwipeItem
-                                    
+                                    x:DataType="{x:Type vm:TermsViewModel}"
                                     BackgroundColor="Orange"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:TermsViewModel}}, Path=EditTermCommand}"
+                                    Command="{Binding Path=EditTermCommand, Source={RelativeSource AncestorType={x:Type vm:TermsViewModel}}}"
                                     CommandParameter="{Binding .}"
                                     Text="Edit" />
 
