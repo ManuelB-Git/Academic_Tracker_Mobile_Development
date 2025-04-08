@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Academic_Tracker_Mobile_Development.Views.CourseView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Course: ">
+    <Grid RowDefinitions="*,*,*">
+        <Border
+            Grid.Row="0"
+            Margin="20"
+            Background="#d0effb"
+            StrokeShape="RoundRectangle 20,20,20,20">
+
+            <Grid RowDefinitions="Auto, Auto, Auto,Auto,Auto">
+                <Label
+                    Grid.Row="0"
+                    Margin="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="Course Information" />
+                <Label
+                    Grid.Row="1"
+                    Margin="10"
+                    Text="Course Title" />
+                <Label
+                    Grid.Row="2"
+                    Margin="10"
+                    Text="Course Start Date" />
+                <Label
+                    Grid.Row="3"
+                    Margin="10"
+                    Text="Course End Date" />
+                <Grid
+                    Grid.Row="4"
+                    Margin="10"
+                    ColumnDefinitions="*,Auto">
+                    <Border
+                        Grid.Column="0"
+                        Margin="0,0,10,0"
+                        Padding="5"
+                        Background="White"
+                        StrokeShape="RoundRectangle 10,10,10,10">
+                        <Label FontSize="10" Text="Notes" />
+                    </Border>
+                    <Button Grid.Column="1" Text="Share" />
+                </Grid>
+
+            </Grid>
+        </Border>
+        <Border
+            Grid.Row="1"
+            Margin="20"
+            Background="#d0effb"
+            StrokeShape="RoundRectangle 20,20,20,20">
+            <Grid RowDefinitions="Auto, *, *,*">
+                <Label
+                    Grid.Row="0"
+                    Margin="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="Instructor Information" />
+                <Label
+                    Grid.Row="1"
+                    Margin="10"
+                    Text="Instructor Name" />
+                <Label
+                    Grid.Row="2"
+                    Margin="10"
+                    Text="Instructor Phone" />
+                <Grid
+                    Grid.Row="4"
+                    Margin="10"
+                    ColumnDefinitions="*,Auto">
+                    <Label Text="Email" />
+                    <Button
+                        Grid.Column="1"
+                        Text="Email"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+        </Border>
+        <Border
+            Grid.Row="2"
+            Margin="20"
+            Background="#d0effb"
+            StrokeShape="RoundRectangle 20,20,20,20">
+            <Grid RowDefinitions="Auto, *">
+                <Label
+                    Grid.Row="0"
+                    Margin="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="Assessment Information" />
+                <CollectionView Margin="10">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem BackgroundColor="Red" Text="Delete" />
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem BackgroundColor="Orange" Text="Edit" />
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+                                <Border Margin="10" Stroke="Gray">
+                                    <StackLayout>
+                                        <Label
+                                            FontSize="20"
+                                            HorizontalOptions="Center"
+                                            Text="Title"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            FontSize="12"
+                                            HorizontalOptions="Center"
+                                            Text="Date"
+                                            VerticalOptions="Center" />
+                                    </StackLayout>
+                                </Border>
+                            </SwipeView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

@@ -10,6 +10,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
+        <Button Clicked="Button_Clicked" Text="Course View - Teporary button" />
         <Label
             Margin="10,30,10,10"
             HorizontalTextAlignment="Center"

@@ -6,7 +6,6 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace Academic_Tracker_Mobile_Development.ViewModels
 {
-    
     public partial class AddEditTermViewModel : ObservableObject
     {
         private readonly TermRepository _db;
